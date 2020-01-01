@@ -1,0 +1,17 @@
+---
+# tasks file for block_ip
+- name: block_ip
+  block_ip:
+    target: "{{ item }}"
+    state: present
+#    state: absent
+  with_items:
+    - "{{ block_target }}"
+
+- name: accept_ip
+  block_ip:
+    target: "{{ item }}"
+#    state: present
+    state: absent
+  with_items:
+    - "{{ accept_target }}"

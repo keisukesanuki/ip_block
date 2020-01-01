@@ -1,0 +1,12 @@
+---
+# Main Playbook
+- name: apply master configuration to master nodes
+  hosts: all
+  vars_files: 
+   - ./group_vars/main.yml 
+  remote_user: vagrant
+#  remote_user: centos
+  become: yes
+  roles:
+    - block_ip
+#    - accept_ip
